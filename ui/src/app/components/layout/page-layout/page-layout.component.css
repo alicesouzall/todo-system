@@ -1,0 +1,14 @@
+.header {
+    position: fixed;
+    top: 0
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.children {
+    margin-top: 6rem;
+    color: #fff
+}

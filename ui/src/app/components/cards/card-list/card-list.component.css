@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 10px 10px 17px 2px rgba(0,0,0,0.56);
+    border-radius: 16px;
+    padding: 1rem;
+    margin: 10px 0px;
+    height: 5rem;
+}
+
+p {
+    margin: 0;
+}
+
+input {
+    cursor: pointer;
+}
+
+.actions {
+    height: 100%;
+    width: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions mat-icon {
+    cursor: pointer;
+}
+
+.actions mat-icon:hover {
+    color: rgb(203, 147, 255);
+}

@@ -1,0 +1,44 @@
+footer {
+    width: 100vw;
+    height: 5rem;
+    color: #fff;
+    border-top: 3px solid rgb(203, 147, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 3rem;
+    background-color: #303030;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-container p {
+    margin: 0;
+}
+
+.icon {
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon a, .icon mat-icon {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    color:#fff
+}
+
+.icon mat-icon:hover {
+    color: rgb(203, 147, 255)
+}
