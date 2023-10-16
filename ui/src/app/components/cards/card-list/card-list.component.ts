@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TaskModifier } from 'src/app/models/task-modifier.model';
 import { TaskTable } from 'src/app/models/task-table.model';
+import { DatabaseHandlerService } from 'src/app/services/database-handler.service';
 import { DialogAddComponent } from '../../dialogs/dialog-add/dialog-add.component';
 
 @Component({
@@ -10,17 +10,26 @@ import { DialogAddComponent } from '../../dialogs/dialog-add/dialog-add.componen
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent {
-  public initialValues: TaskTable = {
-    id: 1, col_texto: "teste", col_dt: '2020-01-01'
-  }
+  @Input()
+  taskTable!: TaskTable;
 
   constructor(
-    public dialog: MatDialog
-  ) {}
+    public dialog: MatDialog,
+    private databaseHandler: DatabaseHandlerService
+    ) {}
 
-  openDialog(): void {
+  deleteTask(id: number): void {
+    this.databaseHandler.deleteTask(id).subscribe((data) => {
+      alert(data.message)
+      window.location.reload()
+    })
+  }
+
+  openDialog(id: number): void {
     const dialogRef = this.dialog.open(DialogAddComponent, {
-      data: this.initialValues,
+      data: {
+        id: id, colTexto: ""
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {

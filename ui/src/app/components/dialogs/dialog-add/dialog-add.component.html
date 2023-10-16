@@ -2,14 +2,10 @@
     <h2>Adicione uma nova tarefa</h2>
     <mat-form-field>
         <label class="input-label">Título</label>
-        <input [(ngModel)]="data.col_texto">
-    </mat-form-field>
-    <mat-form-field>
-        <label class="input-label">Data de Finalização</label>
-        <input type="date" [(ngModel)]="data.col_dt">
+        <input [(ngModel)]="data.colTexto">
     </mat-form-field>
     <div class="button-container">
         <button (click)="onClose()">Cancelar</button>
-        <button [mat-dialog-close]="data" cdkFocusInitial>Adicionar</button>
+        <button (click)="onSave()" [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
     </div>
 </div>

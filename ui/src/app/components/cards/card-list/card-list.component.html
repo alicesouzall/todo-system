@@ -1,9 +1,9 @@
 <div class="container">
     <input type="checkbox"/>
-    <p>Tarefa</p>
-    <p>00/00/0000</p>
+    <p>{{taskTable.colTexto}}</p>
+    <p>{{taskTable.colDt}}</p>
     <div class="actions">
-        <mat-icon (click)="openDialog()" aria-hidden="false" aria-label="search icon" fontIcon="edit"></mat-icon>
-        <mat-icon aria-hidden="false" aria-label="search icon" fontIcon="delete"></mat-icon>
+        <mat-icon (click)="openDialog(taskTable.id)" aria-hidden="false" aria-label="search icon" fontIcon="edit"></mat-icon>
+        <mat-icon (click)="deleteTask(taskTable.id)" aria-hidden="false" aria-label="search icon" fontIcon="delete"></mat-icon>
     </div>
 </div>

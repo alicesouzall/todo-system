@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TaskModifier } from 'src/app/models/task-modifier.model';
+import { TaskTable } from 'src/app/models/task-table.model';
 import { DialogAddComponent } from '../../dialogs/dialog-add/dialog-add.component';
 
 @Component({
@@ -10,8 +10,8 @@ import { DialogAddComponent } from '../../dialogs/dialog-add/dialog-add.componen
 })
 export class HeaderComponent {
 
-  public initialValues: TaskModifier = {
-    col_texto: "", col_dt: null
+  public initialValues: TaskTable = {
+    id: 0, colTexto: "", colDt: '00/00/0000'
   }
 
   constructor(
@@ -24,8 +24,8 @@ export class HeaderComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.initialValues.col_dt = null
-      this.initialValues.col_texto = ""
+      this.initialValues.colDt = '00/00/0000'
+      this.initialValues.colTexto = ""
     });
   }
 }

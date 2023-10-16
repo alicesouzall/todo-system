@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Input } from '@angular/core';
+import { TaskTable } from 'src/app/models/task-table.model';
+import { DatabaseHandlerService } from 'src/app/services/database-handler.service';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,16 @@ import { Input } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 
-// @Input() mensagem: string;
-
 export class HomeComponent {
+  public tasks: TaskTable[] = [];
+  constructor(
+    private databaseHandler: DatabaseHandlerService
+    ) {}
+
+  ngOnInit(): void {
+    this.databaseHandler.getAllTasks().subscribe((t) => {
+      this.tasks = t.data;
+    });
+  }
 
 }

@@ -4,11 +4,14 @@
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 0.0;
+    height: 5rem;
+
 }
 
 .children {
     margin-top: 6rem;
+    margin-bottom: 6rem;
     color: #fff
 }
